@@ -1,5 +1,7 @@
+package s0start;
+
 public class LetterArray {
-    public static int[] countLetters(String text) {
+	public static int[] countLetters(String text) {
         int[] array;
         int i, a, ascii1, ascii2;
 
@@ -19,14 +21,15 @@ public class LetterArray {
             }
             ascii1 = 65;
             ascii2 = 97;
-            a = 0;
+            a = 0; 
             i++;
         }
         return array;
     }
 
     public static void main(String[] args) {
-        int[] array = countLetters("aaabbbc");
+        int[] array = countLetters("hallo mein name ist yannis");
+        
         System.out.println(array[0]);
     }
 }

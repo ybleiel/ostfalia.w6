@@ -1,25 +1,35 @@
-
+package s0start;
 
 public class SetOps {
-    public static boolean isSubsetOf(char[] a, char[] b) {
-        int i, j, l;
+	public static boolean isSubsetOf(char[] a, char[] b) {
+        int i, j, l, h;
+
 
         i = 0;
         j = 0;
         l = 0;
-        while (a[i] != 0) {
-            while (b[j] != 0) {
+        h = 0;
+//        if (a.length == 0 && b.length == 0)
+//        	return true;
+//        else if (a.length == 0 && b.length > 0)
+//        	return true;
+//        else if (a.length > 0 && b.length == 0)
+//        	return false;
+        while (i < a.length) {
+            while (j < b.length) {
                 if (a[i] == b[j])
-                    l++;
+                	break ;
+                else
+                	l++;
                 j++;
             }
+            if (l == b.length)
+            	return false;
             j = 0;
+            l = 0;
             i++;
         }
-        if (l >= 2)
-            return true;
-        else
-            return false;
+       return true;
     }
 
     public static boolean isEqualTo(char[] a, char[] b) {
@@ -28,8 +38,8 @@ public class SetOps {
         i = 0;
         j = 0;
         l = 0;
-        while (a[i] != 0) {
-            while (b[j] != 0) {
+        while (i < a.length) {
+            while (j < b.length) {
                 if (a[i] == b[j])
                     l++;
                 j++;
@@ -43,9 +53,9 @@ public class SetOps {
         i = 0;
         j = 0;
         l = 0;
-        while (b[i] != 0) {
-            while (a[j] != 0) {
-                if (b[i] == b[j])
+        while (i < b.length) {
+            while (j < a.length) {
+                if (b[i] == a[j])
                     l++;
                 j++;
             }
@@ -59,14 +69,10 @@ public class SetOps {
     }
 
     public static void main(String[] args) {
-        char[] a = new char[10];
-        char[] b = new char[10];
-        a[0] = 'h';
-        a[1] = 'o';
-        b[0] = 'h';
-        b[1] = 'o';
-        b[2] = 'o';
+        char[] a = {1,2,3};
+        char[] b = {};
+        
 
-        System.out.println(isEqualTo(a, b));
+        System.out.println(isSubsetOf(a, b));
     }
 }
